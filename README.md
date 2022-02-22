@@ -296,6 +296,12 @@ excel2java.xml
     里面有详细的注释
 UnionAnnotate
     可以指定大 key 双层map。
+
+校验实现
+    基础校验：
+        apache-bval https://www.baeldung.com/apache-bval
+    逻辑校验
+        实现 afterAllSheetReadDo 接口即可。    
 ```
 
 ### 解析java到内存

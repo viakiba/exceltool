@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+重点!!!    取出的对象都是单例的不可修改!!!!!!!!!!!!!
+scripts标签属性
+	templatesName 模板名称
+	templatesPath 模板文件所在文件夹全路径
+	excelRootPath excel策划资源文件夹全路径路径
+	genBeanPath 相对于根路径的生成javabean的路径
+	packageName javabean的包名
+	afterReadDoPackage AfterReadDo接口包全路径
+	convertPackage 自定义转换器所处的包全路径
+
+file 标签
+	name指对应的excel的文件 其中的sheet标签 按照未知对应sheet索引号 没有请用空 sheet标签占位(0开始)
+sheet 标签
+	class 指得是映射类的全路径 生成javabean的时候 会取最后一个句号后的字符串作为文件名称 genover 如果不是0则不会再次生成
+	可以多个，按照顺序对应sheet。空sheet占位不读。
+
+代码生成 每一个javabean的生成都是根据excel的配置生成的:
+	第一行是 字段名称 如果字段名称以 # 开头,生成时会忽略此字段
+	第二行是字段注释
+	第三行是字段定义的类型支持基础类型(list会使用包装类)与字符串(假如是以 [] 结尾定义的字段类型,工具会解析成list)
+		接入想要使用二维或者更多维度数组请实现 com.alibaba.excel.converters.Converter 接口 并作为 注解
+		com.alibaba.excel.annotation.ExcelProperty的 converter 属性参数进行定义
+	如果想要在生成时就假如此转换器 请修改 HeadReadListener 中的  getType 与 setExcelProperty .
+
+分类获取(小功能)
+	自定义的 UnionAnnotate 注解 设置其属性 type的值为指定的字段名,则 读取excel表数据之后,可以通过则该字段的 值 找到对应的所有字段为此值的map对象集合.
+-->
+
+<scripts
+		templatesName = "Java.ftl"
+		templatesPath = "/Users/dd/Documents/excelTool/src/main/resources/templates/"
+		excelRootPath = "/Users/dd/Documents/excelTool/src/test/resources/excel/"
+		genBeanPath = "/Users/dd/Documents/excelTool/src/test/java/model/"
+		packageName = "model"
+		afterReadDoPackage = "org.viakiba.exceltool.AfterReadDo"
+		convertPackage = "org.viakiba.exceltool.convert.*"
+		firstColsData = "0"
+>
+	<file name="Demo_1.xlsm">
+		<sheet class="model.DataExcel" genOver="0"/>
+		<sheet></sheet>
+	</file>
+</scripts>

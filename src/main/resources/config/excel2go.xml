@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+templatesName = "Go.ftl"										模板名称
+templatesPath = "/Users/dd/Desktop/exceltool/go/config/"		模板所在文件夹路径
+excelRootPath = "/Users/dd/Desktop/exceltool/excelresource/"	excel文件所在文件夹路径
+genBeanPath = "/Users/dd/Desktop/exceltool/goexport/"			go结构体导出文件夹路径
+packageName = "excel_struct"									go结构体的包名
+
+-->
+
+<scripts
+		templatesName = "Go.ftl"
+		templatesPath = "/Users/dd/Desktop/exceltool/go/config/"
+		excelRootPath = "/Users/dd/Desktop/exceltool/excelresource/"
+		genBeanPath = "/Users/dd/Desktop/exceltool/goexport/"
+		packageName = "excel_struct"
+>
+	<file name="Demo_1.xlsm">
+		<!--
+				goDataExcel 为导出的文件名称
+				如果指定了 idName 则会使用 指定的列名称 做 key	而不是默认的
+				sheet 标签可以多个，空sheet可以占位置 忽略对应索引的sheet.
+				genOver 为 0 代表此次需要重新生成 不为 0 则此次不再生成。
+		-->
+		<sheet class="goDataExcel" idName="gid" genOver="0"/>
+		<sheet></sheet>
+	</file>
+</scripts>
+
+
+

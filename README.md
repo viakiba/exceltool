@@ -9,13 +9,16 @@
 
 ## 构建 可执行的Jar 文件
 
-    需要具备 jdk1.8 以及 maven 环境。
+    需要具备 jdk1.8 以及 maven 环境,采用 EaasyExcel 以及 Freemarker 进行实现。
     
     注意 ( org.viakiba.exceltool.ReadExcelUtil )
         一维分割符 使用 , 分割
         二维分割符 使用#分割成一维一维使用分割成具体单元
         忽略字段 以 # 开头 
     可以修改上述符合，进行构建使用。
+    Go 与 Java 进行类的类型定义
+        go:     org.viakiba.exceltool.gengolang.HeadReadListener.getType
+        java:   org.viakiba.exceltool.genjava.HeadReadListener.getType
 
 在代码根目录执行如下脚本
 

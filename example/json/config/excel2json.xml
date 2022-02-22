@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+templateName = "Json.ftl"  模板文件名称
+idDefaultIndex = "0"  默认id key 对应的列的索引
+typeRowNum = "2" 字段定义的类型所在行的行号
+fieldNameRowNum = "0" 字段名称定义所在的行号
+descRowNum = "1" 注释描述定义所在行号
+firstDataRowNum="3" 第一行数据所在行数号    有的数据起始行会和定义之间空出几行作为预留位置 填写一些额外信息。
+removeFirstColumn="false" 是否移除第一列数据 有时第一列数据在项目中也会作为预留位置 填写一些额外信息。
+arrayIdentifier="[" 数组判断 <   用于识别数组的标识符 假如 typeRowNum 内的内容以 '['  开头 则认为是数组
+isRemoveFirstColumn="false" 方形有两行类型定义 第二行存在类型定义会覆盖第一行定义
+-->
+<scripts
+		templateName = "Json.ftl"
+		idDefaultIndex = "0"
+		typeRowNum = "2"
+		fieldNameRowNum = "0"
+		descRowNum = "1"
+		firstDataRowNum="3"
+		removeFirstColumn="false"
+		arrayIdentifier="["
+		isSquare="false"
+>
+	<file name="Demo_1.xlsm">
+		<!--	luaDataExcel 导出的文件名称 如果指定了 IDName 则会使用 指定的列名称 做 key	而不是默认的 -->
+		<sheet jsonFileName="luaDataExcel" idName="gid"/>
+	</file>
+</scripts>
+
+
+

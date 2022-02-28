@@ -285,6 +285,17 @@ return map
     在已有的项目中引入此 jar 的依赖。
     见源代码 test下 的测试代码。
 
+引入依赖
+
+```xml
+<!-- https://mvnrepository.com/artifact/io.github.viakiba/exceltool -->
+<dependency>
+    <groupId>io.github.viakiba</groupId>
+    <artifactId>exceltool</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ### 生成 Java Model
 
 ```text
